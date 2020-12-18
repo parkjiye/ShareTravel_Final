@@ -1,0 +1,20 @@
+{% for photo in post.photo_set.all%}
+    <img src="{{photo.image.url}}" width="50"><br>
+{% endfor %}
+
+<html>
+    <head>
+        <title>Posting!</title>
+    </head>
+    <body>
+        <h1>게시글 개별 페이지입니다</h1>
+        <p>{{post.title}}</p>
+        <p>{{post.content}}</p>
+        <!-- 이미지 보여주기 -->
+        {% if photo.image %}
+            <img src = "{{ photo.image.url }}" alt="" height="600">
+            <br>
+        {% endif %}
+        <a href="/world/">목록</a>
+    </body>
+</html>
